@@ -12,5 +12,7 @@ module TeampactAltspace
     config.generators.assets = false
     config.generators.helper = false
     config.generators.view_specs = false
+
+    config.lograge.enabled = true
   end
 end
