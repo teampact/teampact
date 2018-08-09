@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { CorgiIcon } from '../corgi_icon/corgi_icon';
+import { KomandinisDarbas } from '../komandinis-darbas';
 
 const FooterContainer = styled.div`
   margin-top: 20px;
@@ -24,9 +24,8 @@ const Footer = () => (
 
     by
 
-    <CorgiIcon />
+    <KomandinisDarbas />
 
-    Komandinis darbas
   </FooterContainer>
 );
 
