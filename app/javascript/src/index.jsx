@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Footer } from './components/footer';
 
+import './components/font-awesome';
 
 import { injectGlobal } from 'styled-components';
 
@@ -16,16 +17,19 @@ body {
 
 export const App = props => (
   <div>
-    Hello {props.name}!
+    Hello
+    {' '}
+    {props.name}
+!
 
-    <Footer/>
+    <Footer />
   </div>
-)
+);
 
 App.defaultProps = {
-  name: 'David'
-}
+  name: 'David',
+};
 
 App.propTypes = {
-  name: PropTypes.string
-}
+  name: PropTypes.string,
+};
