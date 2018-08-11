@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { injectGlobal } from 'styled-components';
 
 import './components/font-awesome';
@@ -16,15 +16,13 @@ body {
 
 export const App = () => (
   <div>
-
     <ProfilePage />
-
     <Footer />
   </div>
 );
 
-App.defaultProps = {
-};
-
-App.propTypes = {
-};
+// App.defaultProps = {
+// };
+//
+// App.propTypes = {
+// };

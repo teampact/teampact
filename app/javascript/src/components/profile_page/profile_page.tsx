@@ -1,6 +1,5 @@
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components'
-
 
 const NameBlock = styled.div`
   font-size: 24px;
@@ -12,7 +11,6 @@ const user = {
 
 export const ProfilePage = () => (
   <div>
-
     <NameBlock>
       {user.name}
     </NameBlock>

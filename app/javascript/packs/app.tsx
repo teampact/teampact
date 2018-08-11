@@ -1,10 +1,10 @@
-import ReactDOM from 'react-dom'
-import React from 'react';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom'
 import { App } from '../src';
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <App name="Kostas" />,
+    <App />,
     document.body.appendChild(document.createElement('div')),
   )
 });

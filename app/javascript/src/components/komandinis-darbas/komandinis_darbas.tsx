@@ -1,8 +1,8 @@
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 
-import CorgiSmile from './corgi_smile.svg';
-import CorgiTongue from './corgi_tongue.svg';
+const CorgiSmile = require('./corgi_smile.svg') as string;
+const CorgiTongue = require('./corgi_tongue.svg') as string;
 
 const IconContainer = styled.a`
   padding-left: 24px;
@@ -21,9 +21,9 @@ const IconContainer = styled.a`
 `;
 
 const KomandinisDarbas = () => (
-  <IconContainer href="https://www.komandinis-darbas.lt">
-    Komandinis darbas
-  </IconContainer>
+    <IconContainer href="https://www.komandinis-darbas.lt">
+        Komandinis darbas
+    </IconContainer>
 );
 
 export { KomandinisDarbas };
