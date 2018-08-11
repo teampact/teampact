@@ -6,12 +6,16 @@
     "@fortawesome/free-solid-svg-icons": "^5.1.0-11",
     "@fortawesome/react-fontawesome": "^0.1.0-11",
     "@rails/webpacker": "3.5",
+    "@types/react": "^16.4.9",
+    "@types/react-dom": "^16.0.7",
     "babel-preset-react": "^6.24.1",
     "global": "^4.3.2",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "styled-components": "^3.4.2"
+    "styled-components": "^3.4.2",
+    "ts-loader": "3.5.0",
+    "typescript": "^3.0.1"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.6",
