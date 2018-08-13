@@ -12,4 +12,8 @@
  *
  *= require_tree .
  *= require_self
+ *= require 'bootstrap-grid/dist/grid.css'
+
  */
+
+* { box-sizing: border-box; }
