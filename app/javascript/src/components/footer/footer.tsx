@@ -1,6 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { KomandinisDarbas } from '../komandinis-darbas';
 
 const FooterContainer = styled.div`
@@ -15,18 +15,14 @@ const HeartContainer = styled.span`
 `;
 
 const Footer = () => (
-  <FooterContainer>
-    Made with
-
-    <HeartContainer>
-      <FontAwesomeIcon icon="heart" />
-    </HeartContainer>
-
-    by
-
-    <KomandinisDarbas />
-
-  </FooterContainer>
+  <div className="container">
+    <FooterContainer>
+      Made with
+      <HeartContainer><FontAwesomeIcon icon="heart" /></HeartContainer>
+      by
+      <KomandinisDarbas />
+    </FooterContainer>
+  </div>
 );
 
 export { Footer };

@@ -3,7 +3,7 @@ import { injectGlobal } from 'styled-components';
 
 import './components/font-awesome';
 import { Footer } from './components/footer';
-import { ProfilePage } from './components/profile_page';
+import { PersonScreen } from './screens/person_screen/person_screen';
 
 injectGlobal`
 body {
@@ -15,14 +15,8 @@ body {
 `;
 
 export const App = () => (
-  <div>
-    <ProfilePage />
+  <div className="container">
+    <PersonScreen />
     <Footer />
   </div>
 );
-
-// App.defaultProps = {
-// };
-//
-// App.propTypes = {
-// };
