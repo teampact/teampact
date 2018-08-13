@@ -9,7 +9,7 @@ services:
   app:
     build: .
     image: teampact/teampact
-    command: bin/rails s
+    command: ./bin/dev
     volumes:
       - .:/app
     ports:
