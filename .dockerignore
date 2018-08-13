@@ -1,3 +1,8 @@
-log
-tmp
+.DS_Store
+.git
+.idea
+log/*
 node_modules
+tmp/*
+yarn-error.log
+
