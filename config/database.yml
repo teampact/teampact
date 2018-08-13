@@ -9,11 +9,11 @@ default: &default
 
 development:
   <<: *default
-  database: teampact-altspace_development
+  database: teampact_development
 
 test:
   <<: *default
-  database: teampact-altspace_test
+  database: teampact_test
 
 production:
   <<: *default
