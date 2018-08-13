@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    volumes:
+    - ./tmp/teampact-db:/var/lib/postgresql/data
+
+  app:
+    build: .
+    image: teampact/teampact
+    command: bin/rails s
+    volumes:
+      - .:/app
+    ports:
+      - 3200:3000
+    depends_on:
+      - db
+#    env_file:
+#      - .env
+    environment:
+      DATABASE_URL: postgres://postgres:@db:5432/teampact_development
+      RAILS_LOG_TO_STDOUT: "true"
+
+  client:
+    image: teampact/teampact
+    volumes:
+      - .:/app
+    ports:
+      - 3035:3035
+    command: /app/bin/webpack-dev-server
+
