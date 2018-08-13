@@ -14,5 +14,9 @@ module TeampactAltspace
     config.generators.view_specs = false
 
     config.lograge.enabled = true
+
+    logger = ActiveSupport::Logger.new(STDOUT)
+    logger.formatter = config.log_formatter
+    config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
 end
