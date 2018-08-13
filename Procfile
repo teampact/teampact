@@ -1,2 +1,2 @@
-app: bundle exec rails s -p 7000
+app: bundle exec rails s -p 3200
 webpack: bin/webpack-dev-server
