@@ -34,5 +34,6 @@ ADD . /app
 
 RUN bundle && yarn
 
-EXPOSE 3000
-CMD rails s -b 0.0.0.0 -p 3000
+EXPOSE 3200
+EXPOSE 3040
+CMD rails s -b 0.0.0.0 -p 3200
