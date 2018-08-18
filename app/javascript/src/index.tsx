@@ -4,6 +4,7 @@ import { injectGlobal } from 'styled-components';
 import './components/font-awesome';
 import { Footer } from './components/footer';
 import { LoginScreen } from './screens/login_screen';
+import  { RestorePasswordScreen } from './screens/restore_password_screen'
 
 injectGlobal`
 body { 
@@ -21,6 +22,7 @@ body * {
 export const App = () => (
   <div className="container">
     <LoginScreen />
+    <RestorePasswordScreen />
     <Footer />
   </div>
 );
