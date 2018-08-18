@@ -3,20 +3,24 @@ import { injectGlobal } from 'styled-components';
 
 import './components/font-awesome';
 import { Footer } from './components/footer';
-import { PersonScreen } from './screens/person_screen/person_screen';
+import { LoginScreen } from './screens/login_screen';
 
 injectGlobal`
-body {
-  font-family: system-ui, -apple-system, system-ui, ".SFNSText-Regular", sans-serif;
+body { 
   font-weight: 400;
-  font-size: 14px;
+  font-size: 18px;
   color: #333333;
 }
+
+body * {
+  font-family: 'Lato', sans-serif;
+}
+
 `;
 
 export const App = () => (
   <div className="container">
-    <PersonScreen />
+    <LoginScreen />
     <Footer />
   </div>
 );

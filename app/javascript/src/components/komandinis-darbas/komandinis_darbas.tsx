@@ -9,7 +9,7 @@ const IconContainer = styled.a`
   display: inline-block;
   background-image: url(${CorgiSmile});
   background-position-x: 0;
-  background-position-y: -3px;
+  background-position-y: -1px;
   background-repeat: no-repeat;
   background-size: 24px 24px;
   color: inherit;
