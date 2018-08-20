@@ -9,7 +9,7 @@ const IconContainer = styled.a`
   display: inline-block;
   background-image: url(${CorgiSmile});
   background-position-x: 0;
-  background-position-y: -1px;
+  background-position-y: -3px;
   background-repeat: no-repeat;
   background-size: 24px 24px;
   color: inherit;
@@ -21,9 +21,9 @@ const IconContainer = styled.a`
 `;
 
 const KomandinisDarbas = () => (
-    <IconContainer href="https://www.komandinis-darbas.lt">
-        Komandinis darbas
-    </IconContainer>
+  <IconContainer href="https://www.komandinis-darbas.lt">
+    Komandinis darbas
+  </IconContainer>
 );
 
 export { KomandinisDarbas };

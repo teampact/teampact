@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { LoginFormBlock } from '../../styled/login_form_block';
+import {
+  LoginFormBlock,
+  LoginFormContainer,
+} from '../../styled/login_form_block';
 import { H1Block } from '../../styled/header';
 import { CenterBlock } from '../../styled/center_block';
 import { Input } from '../../components/input';
@@ -19,34 +22,36 @@ export class RestorePasswordScreen extends Component {
   render() {
     const { email } = this.state;
     return (
-      <LoginFormBlock>
-        <CenterBlock>
-          <H1Block>
-            Restore password
-          </H1Block>
-        </CenterBlock>
-
-        <FormGroupBlock>
-          <FormLabel>
-            Enter your email:
-          </FormLabel>
-
-          <Input
-            name="email"
-            value={email}
-            onChange={this.onChange}
-            placeholder="Email"
-            type="email"
-          />
-        </FormGroupBlock>
-
-        <FormGroupBlock>
+      <LoginFormContainer>
+        <LoginFormBlock>
           <CenterBlock>
-            <Button value="Restore" onClick={this.submit} />
+            <H1Block>
+              Restore password
+            </H1Block>
           </CenterBlock>
 
-        </FormGroupBlock>
-      </LoginFormBlock>
+          <FormGroupBlock>
+            <FormLabel>
+              Enter your email:
+            </FormLabel>
+
+            <Input
+              name="email"
+              value={email}
+              onChange={this.onChange}
+              placeholder="Email"
+              type="email"
+            />
+          </FormGroupBlock>
+
+          <FormGroupBlock>
+            <CenterBlock>
+              <Button value="Restore" onClick={this.submit} />
+            </CenterBlock>
+
+          </FormGroupBlock>
+        </LoginFormBlock>
+      </LoginFormContainer>
     );
   }
 }

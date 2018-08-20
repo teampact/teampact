@@ -5,9 +5,12 @@ import { Input } from '../../components/input';
 import { Button } from '../../components/button/button';
 import { H1Block } from '../../styled/header';
 import { FormGroupBlock } from '../../styled/form_group_block';
-import { LoginFormBlock } from '../../styled/login_form_block';
+import {
+  LoginFormBlock,
+  LoginFormContainer,
+} from '../../styled/login_form_block';
 import { CenterBlock } from '../../styled/center_block';
-import { FormLabel } from '../../styled/form_label';
+import { FormError, FormLabel } from '../../styled/form_label';
 import { FormHelper } from '../../styled/form_helper';
 import { Checkbox } from '../../components/checkbox/checkbox';
 
@@ -35,75 +38,81 @@ class LoginScreen extends Component {
     const { email, password, remember_me } = this.state;
 
     return (
-      <LoginFormBlock>
-        <CenterBlock>
-          <H1Block>
-            Login
-          </H1Block>
-        </CenterBlock>
+      <LoginFormContainer>
+        <LoginFormBlock>
+          <CenterBlock>
+            <H1Block>
+              Login
+            </H1Block>
+          </CenterBlock>
 
-        <FormGroupBlock>
+          <FormGroupBlock>
 
-          <FormLabel>
-            Enter your email:
-          </FormLabel>
-          <Input
-            onChange={this.onChange}
-            name="email"
-            placeholder="Email"
-            type="email"
-            value={email}
-          />
-        </FormGroupBlock>
-
-        <FormGroupBlock>
-          <FormLabel>
-            Enter your password:
-          </FormLabel>
-
-          <Input
-            onChange={this.onChange}
-            name="password"
-            placeholder="Password"
-            type="password"
-            value={password}
-          />
-
-          <FormHelper>
-            Restore your password
-          </FormHelper>
-        </FormGroupBlock>
-
-        <FormGroupBlock>
-          <label>
-            <Checkbox
-              checked={remember_me}
-              name='remember_me'
-              onChange={(patch) => console.log(patch)}
+            <FormLabel>
+              Enter your email:
+            </FormLabel>
+            <Input
+              onChange={this.onChange}
+              name="email"
+              placeholder="Email"
+              type="email"
+              value={email}
             />
 
-            Remember me
-          </label>
-        </FormGroupBlock>
+            <FormError>
+              It doesn't look like an email for us.
+            </FormError>
+          </FormGroupBlock>
 
-        <FormGroupBlock>
+          <FormGroupBlock>
+            <FormLabel>
+              Enter your password:
+            </FormLabel>
+
+            <Input
+              onChange={this.onChange}
+              name="password"
+              placeholder="Password"
+              type="password"
+              value={password}
+            />
+
+            <FormHelper>
+              Restore your password
+            </FormHelper>
+          </FormGroupBlock>
+
+          <FormGroupBlock>
+            <label>
+              <Checkbox
+                checked={remember_me}
+                name="remember_me"
+                onChange={this.onChange}
+              />
+
+              Remember me
+            </label>
+          </FormGroupBlock>
+
+          <FormGroupBlock>
+            <CenterBlock>
+              <Button value="Log in" onClick={this.onSubmit} />
+            </CenterBlock>
+          </FormGroupBlock>
+
+
           <CenterBlock>
-            <Button value="Log in" onClick={this.onSubmit} />
+            <LoginWithGoogleBlock>
+              or log in with
+              {' '}
+              <a href="/auth/google_oauth2">
+                Google account
+              </a>
+            </LoginWithGoogleBlock>
           </CenterBlock>
-        </FormGroupBlock>
 
-
-        <CenterBlock>
-          <LoginWithGoogleBlock>
-            or log in with
-            {' '}
-            <a href="/auth/google_oauth2">
-              Google account
-            </a>
-          </LoginWithGoogleBlock>
-        </CenterBlock>
-
-      </LoginFormBlock>
+        </LoginFormBlock>
+      </LoginFormContainer>
     );
   }
 }

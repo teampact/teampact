@@ -1,19 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { media } from '../../styled/media';
 
 const CheckboxBlock = styled.input`
   margin-right: 5px;
   display: inline-block;
-  width: 16px;
-  height: 16px;
+  
+  @media screen and (min-width: ${media.small}){
+    width: 16px;
+    height: 16px;
+  }
 `;
 
 const Checkbox = ({ checked, name, onChange }) => {
   const onClick = (event) => {
-    const { checked } = event.target;
-
-    onChange({ [name]: checked });
+    onChange({ [name]: event.target.checked });
   };
 
   return (
