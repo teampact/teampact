@@ -4,7 +4,9 @@ import { PersonProfile } from '../../components/person_profile';
 const persons = {
   'kostas-kolomeetz': {
     crafts: [
-      { slug: 'rails', name: 'Ruby on Rails' },
+      { slug: 'ruby-on-rails', name: 'Ruby on Rails' },
+      { slug: 'react', name: 'React' },
+      { slug: '' },
     ],
     email: 'kolomeetz@gmail.com',
     name: 'Kostas Kolomeetz',
@@ -20,12 +22,12 @@ const persons = {
   },
 };
 
-class PersonScreen extends React.Component {
-  public render() {
+class ProfileScreen extends React.Component {
+  render() {
     return (
-      <PersonProfile person={ persons['kostas-kolomeetz'] } />
+      <PersonProfile person={persons['kostas-kolomeetz']} />
     );
   }
 }
 
-export { PersonScreen };
+export { ProfileScreen };

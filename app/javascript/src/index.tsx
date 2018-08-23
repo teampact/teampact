@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { injectGlobal } from 'styled-components';
-
+import { Route } from 'react-router-dom';
 import './components/font-awesome';
 import { Footer } from './components/footer';
 import { LoginScreen } from './screens/login_screen';
 import { RestorePasswordScreen } from './screens/restore_password_screen';
 import { media } from './styled/media';
+import { Routes } from './routes';
 
 injectGlobal`
 body { 
@@ -28,9 +29,7 @@ body * {
 
 export const App = () => (
   <div className="container">
-    <LoginScreen />
-    <hr />
-    <RestorePasswordScreen />
-    <Footer />
+    <Routes />
+    <Route component={ Footer } />
   </div>
 );
