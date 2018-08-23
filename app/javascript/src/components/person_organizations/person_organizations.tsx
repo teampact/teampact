@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IPersonOrganization } from '../../screens/person_screen/i_person_organization';
+import { IPersonOrganization } from '../../screens/profile_screen/i_person_organization';
 
 export function PersonOrganizations({organizations}: { organizations: IPersonOrganization[]}) {
   return <div>

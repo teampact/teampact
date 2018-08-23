@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { IPersonProfile } from '../../screens/person_screen/i_person_profile';
+import { IPersonProfile } from '../../screens/profile_screen/i_person_profile';
 
 export function PersonEmail({ person }: { person: IPersonProfile }) {
   return <div>

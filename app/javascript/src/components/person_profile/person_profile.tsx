@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import { IPersonProfile } from '../../screens/person_screen/i_person_profile';
+import { IPersonProfile } from '../../screens/profile_screen/i_person_profile';
 
 import { PersonEmail } from '../person_email/person_email';
 import { PersonOrganizations } from '../person_organizations/person_organizations';
