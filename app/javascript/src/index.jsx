@@ -1,12 +1,21 @@
 import * as React from 'react';
 import { injectGlobal } from 'styled-components';
 import { Route } from 'react-router-dom';
+import ApolloClient from 'apollo-boost';
+import gql from 'graphql-tag';
+import { ApolloProvider } from 'react-apollo';
+
 import './components/font-awesome';
 import { Footer } from './components/footer';
-import { LoginScreen } from './screens/login_screen';
-import { RestorePasswordScreen } from './screens/restore_password_screen';
 import { media } from './styled/media';
 import { Routes } from './routes';
+
+const client = new ApolloClient({ uri: '/graphql' });
+
+console.log('hi');
+
+client.query({ query: gql`{ currentUser { email }  }` })
+  .then(result => console.log(result));
 
 injectGlobal`
 body { 
@@ -26,11 +35,11 @@ body * {
 }
 `;
 
-export const App = () => {
-  return (
+export const App = () => (
+  <ApolloProvider client={client}>
     <div className="container">
       <Routes />
-      <Route component={ Footer } />
+      <Route component={Footer} />
     </div>
-  );
-};
+  </ApolloProvider>
+);
