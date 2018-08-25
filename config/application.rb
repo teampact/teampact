@@ -4,7 +4,7 @@ require 'rails/all'
 
 Bundler.require(*Rails.groups)
 
-module TeampactAltspace
+module Teampact
   class Application < Rails::Application
     config.load_defaults 5.2
 
@@ -14,9 +14,5 @@ module TeampactAltspace
     config.generators.view_specs = false
 
     config.lograge.enabled = true
-
-    # logger = ActiveSupport::Logger.new(STDOUT)
-    # logger.formatter = config.log_formatter
-    # config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
 end
