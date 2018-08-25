@@ -24,12 +24,13 @@ body {
 body * {
   font-family: 'Lato', sans-serif;
 }
-
 `;
 
-export const App = () => (
-  <div className="container">
-    <Routes />
-    <Route component={ Footer } />
-  </div>
-);
+export const App = () => {
+  return (
+    <div className="container">
+      <Routes />
+      <Route component={ Footer } />
+    </div>
+  );
+};

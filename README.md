@@ -18,3 +18,11 @@ Run development services:
     make dev
 
 Open [http://localhost:3200/](http://localhost:3200/) in your browser.
+
+## Env variables
+
+- GOOGLE_CLIENT_ID
+- GOOGLE_CLIENT_SECRET
+- HOST
+- PORT
+- RAILS_LOG_TO_STDOUT

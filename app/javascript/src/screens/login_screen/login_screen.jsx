@@ -105,7 +105,7 @@ class LoginScreen extends Component {
             <LoginWithGoogleBlock>
               or log in with
               {' '}
-              <a href="/auth/google_oauth2">
+              <a href="/users/auth/google_oauth2">
                 Google account
               </a>
             </LoginWithGoogleBlock>

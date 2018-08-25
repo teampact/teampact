@@ -3,23 +3,28 @@
 # Table name: users
 #
 #  id                     :bigint(8)        not null, primary key
+#  admin                  :boolean          default(FALSE)
+#  current_sign_in_at     :datetime
+#  current_sign_in_ip     :inet
+#  email                  :string           default(""), not null
+#  encrypted_password     :string           default(""), not null
 #  first_name             :string
 #  last_name              :string
+#  last_sign_in_at        :datetime
+#  last_sign_in_ip        :inet
+#  remember_created_at    :datetime
+#  reset_password_sent_at :datetime
+#  reset_password_token   :string
+#  sign_in_count          :integer          default(0), not null
 #  state                  :string
-#  admin                  :boolean          default(FALSE)
 #  superadmin             :boolean          default(FALSE)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
-#  email                  :string           default(""), not null
-#  encrypted_password     :string           default(""), not null
-#  reset_password_token   :string
-#  reset_password_sent_at :datetime
-#  remember_created_at    :datetime
-#  sign_in_count          :integer          default(0), not null
-#  current_sign_in_at     :datetime
-#  last_sign_in_at        :datetime
-#  current_sign_in_ip     :inet
-#  last_sign_in_ip        :inet
+#
+# Indexes
+#
+#  index_users_on_email                 (email) UNIQUE
+#  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 
 class User < ApplicationRecord
@@ -29,6 +34,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  devise :omniauthable, omniauth_providers: [:google_oauth2]
 
   aasm column: 'state' do
     state :active, initial: true
@@ -40,6 +47,16 @@ class User < ApplicationRecord
 
     event :suspend do
       transitions from: :active, to: :suspended
+    end
+  end
+
+  def self.from_omniauth(auth_hash)
+    find_or_create_by(email: auth_hash.info.email) do |u|
+      u.first_name = auth_hash.info.first_name
+      u.last_name = auth_hash.info.last_name
+
+      # database_authenticatable requires password to be set
+      u.password = SecureRandom.uuid
     end
   end
 end
