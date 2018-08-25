@@ -42,9 +42,9 @@ gem 'lograge'
 gem 'devise'
 gem 'aasm'
 gem 'omniauth-google-oauth2'
+gem 'graphql', '~> 1.8.7'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.7'
   gem 'factory_bot_rails'
@@ -57,6 +57,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'annotate'
+  gem 'graphiql-rails'
 end
 
 group :test do
@@ -67,3 +68,4 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
