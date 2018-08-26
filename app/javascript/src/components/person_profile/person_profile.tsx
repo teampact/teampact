@@ -15,7 +15,6 @@ export const PersonProfile = ({ person }: { person: IPersonProfile }) => {
 
   return (
     <div className="container">
-
       <PersonPhoto photo={ person.photo } />
       <NameBlock>
         { person.name }
@@ -26,7 +25,7 @@ export const PersonProfile = ({ person }: { person: IPersonProfile }) => {
       </div>
 
       <PersonEmail person={ person } />
-      <PersonOrganizations organizations={person.organizations}/>
+      <PersonOrganizations organizations={person.organizations || []}/>
     </div>
   );
 };

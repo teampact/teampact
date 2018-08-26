@@ -6,5 +6,13 @@ module Types
     def current_user
       context[:current_user]
     end
+
+    field :profile, Types::ProfileType, null: true do
+      argument :id, String, required: true
+    end
+
+    def profile(id:)
+      Profile.find_by(slug: id)
+    end
   end
 end
