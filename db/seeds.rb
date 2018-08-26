@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+include FactoryBot::Syntax::Methods
+
+User.find_or_create_by(email: 'kolomeetz@gmail.com') do |u|
+  u.password = 'password'
+end
+
+10.times do
+  u = create :user
+
+  create :profile, user: u
+end

@@ -99,6 +99,8 @@ GEM
     factory_bot_rails (4.10.0)
       factory_bot (~> 4.10.0)
       railties (>= 3.0.0)
+    faker (1.9.1)
+      i18n (>= 0.7)
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.25)
@@ -285,6 +287,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   factory_bot_rails
+  faker
   foreman
   graphiql-rails
   graphql (~> 1.8.7)
