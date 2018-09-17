@@ -42,7 +42,7 @@ gem 'lograge'
 gem 'devise'
 gem 'aasm'
 gem 'omniauth-google-oauth2'
-gem 'graphql', '~> 1.8.8'
+gem 'graphql', '~> 1.8.9'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
