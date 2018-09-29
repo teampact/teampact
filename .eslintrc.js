@@ -11,31 +11,14 @@ module.exports = {
     },
     'sourceType': 'module'
   },
-  "parser": "babel-eslint",
-  'plugins': [
-    'react'
-  ],
+  'parser': 'babel-eslint',
+  'plugins': ['react'],
   'rules': {
-    'indent': [
-      'error',
-      2
-    ],
-    'linebreak-style': [
-      'error',
-      'unix'
-    ],
-    'no-unused-vars': [
-      'off'
-    ],
-    'quotes':
-      [
-        'error',
-        'single'
-      ],
-    'semi':
-      [
-        'error',
-        'always'
-      ]
+    'indent': ['error', 2],
+    'linebreak-style': ['error', 'unix'],
+    // 'no-unused-vars': ['off'],
+    'quotes': ['error', 'single'],
+    'semi': ['error', 'always'],
+    'import/prefer-default-export': 'off',
   }
 };
