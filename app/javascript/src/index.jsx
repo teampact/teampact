@@ -12,8 +12,6 @@ import { Routes } from './routes';
 
 const client = new ApolloClient({ uri: '/graphql' });
 
-console.log('hi');
-
 client.query({ query: gql`{ currentUser { email }  }` })
   .then(result => console.log(result));
 
