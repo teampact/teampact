@@ -14,5 +14,11 @@ module Types
     def profile(id:)
       Profile.find_by(slug: id)
     end
+
+    field :profiles, [Types::ProfileType], null: false
+
+    def profiles
+      Profile.all
+    end
   end
 end
