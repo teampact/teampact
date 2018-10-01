@@ -12,13 +12,21 @@ module Types
     end
 
     def profile(id:)
-      Profile.find_by(slug: id)
+      Profile.friendly.find(id)
     end
 
     field :profiles, [Types::ProfileType], null: false
 
     def profiles
       Profile.all
+    end
+
+    field :space, Types::SpaceType, null: false do
+      argument :id, String, required: true
+    end
+
+    def space(id:)
+      Space.friendly.find(id)
     end
   end
 end
