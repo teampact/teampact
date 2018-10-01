@@ -8,12 +8,15 @@
 
 include FactoryBot::Syntax::Methods
 
-User.find_or_create_by(email: 'kolomeetz@gmail.com') do |u|
+kolomeetz = User.find_or_create_by(email: 'kolomeetz@gmail.com') do |u|
   u.password = 'password'
 end
 
+space = create :space
+
+create :profile, user: kolomeetz, space: space
+
 10.times do
   u = create :user
-
-  create :profile, user: u
+  create :profile, user: u, space: space
 end

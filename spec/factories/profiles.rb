@@ -4,5 +4,6 @@ FactoryBot.define do
     email { Faker::Internet.email }
     name { [user.last_name, user.first_name].join(' ') }
     tagline { Faker::BackToTheFuture.quote }
+    space
   end
 end
