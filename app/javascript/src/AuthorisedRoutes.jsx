@@ -5,7 +5,7 @@ import { ProfileScreen } from './screens/profile_screen';
 import { LoginScreen } from './screens/login_screen';
 import { ProfilesListScreen } from './screens/profiles_list_screen';
 
-const Routes = props => (
+const AuthorisedRoutes = props => (
   <Switch>
     <RouteWithProps {...props} path="/profiles" exact component={ProfilesListScreen} />
     <RouteWithProps {...props} path="/profiles/:slug" component={ProfileScreen} />
@@ -13,4 +13,4 @@ const Routes = props => (
   </Switch>
 );
 
-export { Routes };
+export { AuthorisedRoutes };

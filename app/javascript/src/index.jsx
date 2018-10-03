@@ -1,19 +1,14 @@
 import * as React from 'react';
 import { injectGlobal } from 'styled-components';
-import { Route } from 'react-router-dom';
-import ApolloClient from 'apollo-boost';
-import gql from 'graphql-tag';
-import { ApolloProvider } from 'react-apollo';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import './components/font-awesome';
 import { Footer } from './components/footer';
 import { media } from './styled/media';
-import { Routes } from './routes';
-
-const client = new ApolloClient({ uri: '/graphql' });
-
-client.query({ query: gql`{ currentUser { email }  }` })
-  .then(result => console.log(result));
+import { mapStateToProps } from './reducers';
+import { mapDispatchToProps } from './actions';
+import Authentication from './authentication';
 
 injectGlobal`
 body { 
@@ -33,11 +28,15 @@ body * {
 }
 `;
 
-export const App = () => (
-  <ApolloProvider client={client}>
+const App = props => (
+  <Router>
     <div className="container">
-      <Routes />
+      <Authentication {...props} />
       <Route component={Footer} />
     </div>
-  </ApolloProvider>
+  </Router>
 );
+
+const AppContainer = connect(mapStateToProps, mapDispatchToProps)(App);
+
+export default AppContainer;
