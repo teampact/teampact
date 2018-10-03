@@ -1,7 +1,5 @@
-import * as React from 'react';
+import React from 'react';
 import styled from 'styled-components';
-
-import { IPersonProfile } from '../../screens/profile_screen/i_person_profile';
 
 import { PersonEmail } from '../person_email/person_email';
 import { PersonOrganizations } from '../person_organizations/person_organizations';
@@ -11,7 +9,7 @@ const NameBlock = styled.div`
   font-size: 24px;
 `;
 
-export const PersonProfile = ({ person }: { person: IPersonProfile }) => {
+export const PersonProfile = ({ person }) => {
 
   return (
     <div className="container">

@@ -1,17 +1,14 @@
 Rails.application.routes.draw do
-  if Rails.env.development?
-    mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
-  end
-
-  post "/graphql", to: "graphql#execute"
-
   devise_for :users, controllers: {
     omniauth_callbacks: 'omniauth_callbacks',
-    # registrations: 'registrations'
   }
 
   # TODO: remove it
   resource :user, only: :show
+
+  namespace :api do
+    resource :current_user, only: [:show]
+  end
 
   root to: 'spa#index'
 

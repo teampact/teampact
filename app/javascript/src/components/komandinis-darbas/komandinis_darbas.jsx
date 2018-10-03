@@ -1,8 +1,8 @@
-import * as React from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
-const CorgiSmile = require('./corgi_smile.svg') as string;
-const CorgiTongue = require('./corgi_tongue.svg') as string;
+const CorgiSmile = require('./corgi_smile.svg');
+const CorgiTongue = require('./corgi_tongue.svg');
 
 const IconContainer = styled.a`
   padding-left: 24px;
