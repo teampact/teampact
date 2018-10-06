@@ -56,9 +56,11 @@ class User < ApplicationRecord
     find_or_create_by(email: auth_hash.info.email) do |u|
       u.first_name = auth_hash.info.first_name
       u.last_name = auth_hash.info.last_name
-
-      # database_authenticatable requires password to be set
       u.password = SecureRandom.uuid
     end
+  end
+
+  def name
+    [first_name, last_name].join(' ')
   end
 end

@@ -30,4 +30,10 @@
 require 'rails_helper'
 
 describe User do
+  let(:user) { create :user }
+  describe '#name' do
+    subject { user.name }
+    it { is_expected.to be_a String }
+    it { is_expected.to include user.first_name, user.last_name }
+  end
 end
