@@ -3,8 +3,6 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def google_oauth2
     @user = User.from_omniauth(auth_hash)
-    logger.debug auth_hash.inspect
-    logger.debug @user
     sign_in_and_redirect @user
   end
 
