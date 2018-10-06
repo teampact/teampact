@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # TODO: remove it
   resource :user, only: :show
 
-  namespace :api do
+  namespace :api, defaults: { format: :json } do
     resource :current_user, only: [:show]
   end
 
