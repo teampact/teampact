@@ -1,16 +1,30 @@
-import { FETCH_CURRENT_USER_FAILURE } from '../actions/current_user';
+import {
+  FETCH_CURRENT_USER_FAILURE,
+  FETCH_CURRENT_USER_REQUEST,
+  FETCH_CURRENT_USER_SUCCESS
+} from '../actions/current_user';
 
 const initialState = {
-  user: {},
+  current_user: {},
   loading: false,
-  authorised: false,
+  authorized: false,
 };
+
+function fetchCurrentUserSuccess(state, action) {
+  const { current_user, authorized } = action.response.data;
+  return { ...state, loading: false, current_user, authorized };
+}
 
 export const currentUser = (state = initialState, action) => {
   switch (action.type) {
+  case FETCH_CURRENT_USER_REQUEST:
+    return { ...state, loading: true }
+  case FETCH_CURRENT_USER_SUCCESS:
+    return fetchCurrentUserSuccess(state, action);
+
   case FETCH_CURRENT_USER_FAILURE:
     console.log(action.error.response);
-    return state;
+    return { ...state, authorized: false, loading: false };
 
   default:
     return state;

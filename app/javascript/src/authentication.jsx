@@ -9,13 +9,13 @@ class Authentication extends Component {
 
   render() {
     const { currentUser } = this.props;
-    const { loading, authorised } = currentUser;
+    const { loading, authorized } = currentUser;
 
     if (loading) {
       return <div> Loading </div>;
     }
 
-    if (authorised) {
+    if (authorized) {
       return <AuthorisedRoutes {...this.props} />;
     }
 
