@@ -5,4 +5,4 @@ prepare:
 	bundle && yarn
 
 dev:
-	foreman run
+	docker-compose up
