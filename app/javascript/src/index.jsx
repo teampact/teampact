@@ -9,22 +9,34 @@ import { media } from './styled/media';
 import { mapStateToProps } from './reducers';
 import { mapDispatchToProps } from './actions';
 import Authentication from './authentication';
+import { theme } from './theme/theme';
 
 injectGlobal`
+html{
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+    
 body { 
   font-weight: 400;
-  font-size: 16px;
-  color: #333333;
+  color: ${theme.colors.black};
+  padding: 0;
+  margin: 0;
+  font-size: 1.6rem
 }
 
 @media screen and (min-width: ${media.small}){
   body {
-    font-size: 18px;
+    font-size: 1.8rem;
   }
 }
 
 body * {
-  font-family: 'Lato', sans-serif;
+  font-family: ${theme.sansSerifFont};
 }
 `;
 

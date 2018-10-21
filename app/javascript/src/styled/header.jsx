@@ -6,7 +6,7 @@ import { media } from './media';
 export const H1Block = styled.h1`
   font-size: 30px;
   font-weight: bold;
-  font-family: ${theme.serif};
+  font-family: ${theme.serifFont};
   padding: 0;
   margin: 0;
   

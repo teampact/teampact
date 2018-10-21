@@ -8,7 +8,7 @@ const FooterContainer = styled.div`
   margin-top: 20px;
   border-top: 1px solid #CCCCCC;
   padding-top: 20px;
-  font-size: 0.8rem;
+  font-size: 1.4rem;
 `;
 
 const HeartContainer = styled.span`

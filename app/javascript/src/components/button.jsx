@@ -10,7 +10,7 @@ const ButtonBlock = styled.button`
   padding: 5px 15px 7px;
   border: none;
   border-radius: 3px;
-  font-family: ${theme.serif};
+  font-family: ${theme.serifFont};
 `;
 
 const Button = ({ value, onClick }) => (
