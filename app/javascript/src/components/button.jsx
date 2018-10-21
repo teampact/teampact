@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import {theme} from '../../theme';
+import { theme } from '../theme';
 
 const ButtonBlock = styled.button`
   background-color: ${theme.colors.primary};
@@ -13,7 +13,7 @@ const ButtonBlock = styled.button`
   font-family: ${theme.serif};
 `;
 
-export const Button = ({ value, onClick }) => (
+const Button = ({ value, onClick }) => (
   <ButtonBlock onClick={onClick}>
     {value}
   </ButtonBlock>
@@ -23,3 +23,5 @@ Button.propTypes = {
   onClick: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired,
 };
+
+export default Button;

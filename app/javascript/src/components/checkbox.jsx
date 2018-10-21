@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { media } from '../../styled/media';
+import { media } from '../styled/media';
 
 const CheckboxBlock = styled.input`
   margin-right: 5px;

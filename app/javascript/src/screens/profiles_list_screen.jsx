@@ -1,7 +1,5 @@
-import React from 'react';
-import { Query } from 'react-apollo';
-import gql from 'graphql-tag';
-import ProfilesList from '../../components/profiles_list/profiles_list';
+import React, { Component } from 'react';
+import ProfilesList from '../components/profiles_list';
 
 const getProfilesListQuery = () => `
 {
@@ -46,4 +44,4 @@ function ProfilesListScreen() {
 
 ProfilesListScreen.propTypes = {};
 
-export { ProfilesListScreen };
+export default ProfilesListScreen;

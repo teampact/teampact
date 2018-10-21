@@ -1,16 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { PersonEmail } from '../person_email/person_email';
-import { PersonOrganizations } from '../person_organizations/person_organizations';
-import { PersonPhoto } from '../person_photo';
+import PersonEmail from './person_email';
+import PersonOrganizations from './person_organizations';
+import PersonPhoto from './person_photo';
 
 const NameBlock = styled.div`
   font-size: 24px;
 `;
 
-export const PersonProfile = ({ person }) => {
-
+const PersonProfile = ({ person }) => {
   return (
     <div className="container">
       <PersonPhoto photo={ person.photo } />
@@ -27,3 +26,5 @@ export const PersonProfile = ({ person }) => {
     </div>
   );
 };
+
+export default PersonProfile;

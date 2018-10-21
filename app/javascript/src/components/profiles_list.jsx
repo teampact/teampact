@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { ProfileLink } from '../profile_link';
+import { ProfileLink } from './profile_link';
 
 const Table = styled.table`
   width: 100%;

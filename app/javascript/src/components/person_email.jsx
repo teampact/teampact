@@ -15,4 +15,4 @@ PersonEmail.propTypes = {
   }).isRequired,
 };
 
-export { PersonEmail };
+export default PersonEmail;

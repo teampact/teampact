@@ -16,4 +16,4 @@ PersonPhoto.propTypes = {
   photo: PropTypes.string.isRequired,
 };
 
-export { PersonPhoto };
+export default PersonPhoto;

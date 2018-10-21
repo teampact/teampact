@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { AuthorisedRoutes } from './AuthorisedRoutes';
-import { LoginScreen } from './screens/login_screen';
+import LoginScreen from './screens/login_screen';
 
 class Authentication extends Component {
   componentDidMount() {

@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
-import {
-  LoginFormBlock,
-  LoginFormContainer,
-} from '../../styled/login_form_block';
-import { H1Block } from '../../styled/header';
-import { CenterBlock } from '../../styled/center_block';
-import { Input } from '../../components/input';
-import { FormGroupBlock } from '../../styled/form_group_block';
-import { Button } from '../../components/button/button';
-import { FormLabel } from '../../styled/form_label';
+import { LoginFormBlock, LoginFormContainer, } from '../styled/login_form_block';
+import { H1Block } from '../styled/header';
+import { CenterBlock } from '../styled/center_block';
+import { Input } from '../components/input';
+import { FormGroupBlock } from '../styled/form_group_block';
+import Button from '../components/button';
+import { FormLabel } from '../styled/form_label';
 
-export class RestorePasswordScreen extends Component {
+export default class RestorePasswordScreen extends Component {
   state = {
     email: '',
   };

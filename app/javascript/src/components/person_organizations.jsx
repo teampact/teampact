@@ -14,4 +14,4 @@ PersonOrganizations.propTypes = {
   })).isRequired,
 };
 
-export { PersonOrganizations };
+export default PersonOrganizations;

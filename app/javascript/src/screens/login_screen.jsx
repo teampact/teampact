@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import { Input } from '../../components/input';
-import { Button } from '../../components/button/button';
-import { H1Block } from '../../styled/header';
-import { FormGroupBlock } from '../../styled/form_group_block';
-import {
-  LoginFormBlock,
-  LoginFormContainer,
-} from '../../styled/login_form_block';
-import { CenterBlock } from '../../styled/center_block';
-import { FormError, FormLabel } from '../../styled/form_label';
-import { FormHelper } from '../../styled/form_helper';
-import { Checkbox } from '../../components/checkbox/checkbox';
-
+import { Input } from '../components/input';
+import Button from '../components/button';
+import { H1Block } from '../styled/header';
+import { FormGroupBlock } from '../styled/form_group_block';
+import { LoginFormBlock, LoginFormContainer } from '../styled/login_form_block';
+import { CenterBlock } from '../styled/center_block';
+import { FormError, FormLabel } from '../styled/form_label';
+import { FormHelper } from '../styled/form_helper';
+import { Checkbox } from '../components/checkbox';
 
 const LoginWithGoogleBlock = styled.div`
   margin-top: 30px;
@@ -117,4 +113,4 @@ class LoginScreen extends Component {
   }
 }
 
-export { LoginScreen };
+export default LoginScreen;
