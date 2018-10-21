@@ -3,9 +3,6 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'omniauth_callbacks',
   }
 
-  # TODO: remove it
-  resource :user, only: :show
-
   namespace :api, defaults: { format: :json } do
     resource :current_user, only: [:show]
   end
