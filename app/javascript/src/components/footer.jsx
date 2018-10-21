@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 
-import { KomandinisDarbas } from '../komandinis-darbas';
+import { KomandinisDarbas } from './komandinis-darbas';
 
 const FooterContainer = styled.div`
   margin-top: 20px;
