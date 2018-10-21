@@ -195,6 +195,8 @@ GEM
       method_source (~> 0.9.0)
     public_suffix (3.0.3)
     puma (3.12.0)
+    pundit (2.0.0)
+      activesupport (>= 3.0.0)
     rack (2.0.5)
     rack-proxy (0.6.4)
       rack
@@ -334,6 +336,7 @@ DEPENDENCIES
   omniauth-google-oauth2
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
+  pundit
   rails (~> 5.2.1)
   rspec-rails (~> 3.8)
   rspec_junit_formatter
