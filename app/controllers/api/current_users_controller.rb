@@ -1,23 +1,28 @@
-class Api::CurrentUsersController < ApplicationController
-  def show
-    render json: {
-      current_user: {
-        name: current_user&.name,
-        email: current_user&.email,
-      },
+# frozen_string_literal: true
 
-      space: {
-        name: space&.name,
-        slug: space&.slug,
-      },
+module Api
+  class CurrentUsersController < ApplicationController
+    def show
+      render json: {
+        current_user: {
+          name: current_user&.name,
+          email: current_user&.email
+        },
 
-      authorized: current_user.present?
-    }
-  end
+        space: {
+          name: space&.name,
+          slug: space&.slug,
+          uuid: space&.uuid
+        },
 
-  private
+        authorized: current_user.present?
+      }
+    end
 
-  def space
-    current_user&.space
+    private
+
+    def space
+      current_user&.space
+    end
   end
 end

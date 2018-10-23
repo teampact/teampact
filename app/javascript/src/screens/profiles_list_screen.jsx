@@ -1,47 +1,53 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import ProfilesList from '../components/profiles_list';
 
-const getProfilesListQuery = () => `
-{
-  profiles {
-    name
-    email
-    slug
+class ProfilesListScreen extends Component {
+  componentDidMount() {
+    this.fetchProfiles();
   }
-}
-`;
 
-function ProfilesListScreen() {
-  return (
-    <div>
-      <Query query={gql(getProfilesListQuery())}>
-        {({ loading, error, data }) => {
-          if (loading) {
-            return (
-              <div>
-                Loading
-              </div>
-            );
-          }
+  fetchProfiles() {
+    const { fetchProfileList, currentUser } = this.props;
+    const { uuid } = currentUser.space;
+    fetchProfileList(uuid);
+  }
 
-          if (error) {
-            console.log(error);
+  render() {
+    const { profiles } = this.props;
+    const { error, loading } = profiles;
 
-            return (
-              <div>
-                Error
-              </div>
-            );
-          }
+    if (loading) {
+      return (
+        <div>
+          Loading
+        </div>
+      );
+    }
 
-          const { profiles } = data;
-          return <ProfilesList profiles={profiles} />;
-        }}
-      </Query>
-    </div>
-  );
-}
+    if (error) {
+      console.log({ error });
 
-ProfilesListScreen.propTypes = {};
+      return (
+        <div>
+          Error
+        </div>
+      );
+    }
+
+    return <ProfilesList profiles={profiles} />;
+  }
+};
+
+ProfilesListScreen.propTypes = {
+  profiles: PropTypes.shape({
+    byId: PropTypes.object, list: PropTypes.array,
+  }).isRequired,
+  fetchProfileList: PropTypes.func.isRequired,
+  currentUser: PropTypes.shape({
+    space: PropTypes.shape({ uuid: PropTypes.string })
+  }).isRequired,
+};
 
 export default ProfilesListScreen;

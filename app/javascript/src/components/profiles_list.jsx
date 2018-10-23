@@ -43,16 +43,20 @@ function ProfilesList(props) {
         </thead>
 
         <tbody>
-          {profiles.map(profile => (
-            <tr key={profile.slug}>
-              <td>
-                <ProfileLink profile={profile} />
-              </td>
-              <td>
-                {profile.email}
-              </td>
-            </tr>
-          ))}
+          {profiles.list.map((slug) => {
+            const profile = profiles.byId[slug];
+
+            return (
+              <tr key={profile.slug}>
+                <td>
+                  <ProfileLink profile={profile} />
+                </td>
+                <td>
+                  {profile.email}
+                </td>
+              </tr>
+            );
+          })}
         </tbody>
       </Table>
     </div>
@@ -60,11 +64,10 @@ function ProfilesList(props) {
 }
 
 ProfilesList.propTypes = {
-  profiles: PropTypes.arrayOf(PropTypes.shape({
-    slug: PropTypes.string,
-    email: PropTypes.string,
-    name: PropTypes.string,
-  })).isRequired,
+  profiles: PropTypes.shape({
+    byId: PropTypes.object,
+    list: PropTypes.arrayOf(PropTypes.string),
+  }).isRequired,
 };
 
 export default ProfilesList;
