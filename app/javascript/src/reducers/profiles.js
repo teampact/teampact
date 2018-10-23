@@ -8,7 +8,7 @@ const initialState = {
   byId: {},
   list: [],
   loading: false,
-  error: {},
+  error: null,
 };
 
 function fetchProfileListRequest(state) {
@@ -16,10 +16,17 @@ function fetchProfileListRequest(state) {
 }
 
 function fetchProfileListSuccess(state, action) {
-  // action.response.data
-  console.log(action.response.data);
-  return { state, loading: false };
-};
+  const { profiles } = action.response.data;
+  const list = profiles.map(p => p.slug);
+  const byId = profiles.reduce((acc, profile) => {
+    acc[profile.slug] = profile;
+    return acc;
+  }, {});
+
+  return {
+    ...state, list, byId, loading: false,
+  };
+}
 
 function fetchProfileListFailure(state, error) {
   console.log(error);
@@ -32,7 +39,9 @@ const map = {
   [FETCH_PROFILE_LIST_FAILURE]: fetchProfileListFailure,
 };
 
-export const profiles = (state = initialState, action) => {
+const profiles = (state = initialState, action) => {
   if (map[action.type]) return map[action.type](state, action);
   return state;
 };
+
+export default profiles;
