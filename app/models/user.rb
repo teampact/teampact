@@ -32,7 +32,7 @@ class User < ApplicationRecord
 
   has_one :profile
 
-  delegate :space, to: :profile, allow_nil: true
+  delegate :space, :space_id, to: :profile, allow_nil: true
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
