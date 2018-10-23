@@ -5,6 +5,11 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resource :current_user, only: [:show]
+    resources :spaces, only: [] do
+      scope module: :spaces do
+        resources :profiles, only: [:index]
+      end
+    end
   end
 
   root to: 'spa#index'
