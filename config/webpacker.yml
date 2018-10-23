@@ -37,7 +37,7 @@ development:
   # Reference: https://webpack.js.org/configuration/dev-server/
   dev_server:
     https: false
-    host: webpacker
+    host: localhost
     port: 3040
     public: 0.0.0.0:3040
     hmr: true
