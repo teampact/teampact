@@ -18,7 +18,7 @@ const PersonProfile = ({ person }) => {
       </NameBlock>
 
       <div>
-        { person.representation }
+        { person.tagline }
       </div>
 
       <PersonEmail person={ person } />
@@ -26,5 +26,6 @@ const PersonProfile = ({ person }) => {
     </div>
   );
 };
+
 
 export default PersonProfile;

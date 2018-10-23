@@ -1,41 +1,66 @@
-import * as React from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import PersonProfile from '../components/person_profile';
 
 class ProfileScreen extends React.Component {
-  render() {
-    const { match } = this.props;
+  componentDidMount() {
+    this.fetchProfile();
+  }
+
+  fetchProfile() {
+    const { match, currentUser, fetchProfile } = this.props;
     const { slug: id } = match.params;
 
-    return (
-      <Query query={gql(getProfileQuery(id))}>
-        {({ loading, error, data }) => {
-          console.log({ loading, error, data });
+    const { uuid } = currentUser.space;
 
-          if (loading) {
-            return (
-              <div>
-                loading
-              </div>
-            );
-          }
+    fetchProfile(uuid, id);
+  }
 
-          if (error) {
-            console.log(error);
+  render() {
+    const { profiles, match } = this.props;
+    const { slug } = match.params;
 
-            return (
-              <div>
-                error %(
-              </div>
-            );
-          }
+    const { error, loading, byId } = profiles;
+    const profile = byId[slug];
 
-          return <PersonProfile person={data.profile} />;
-        }}
+    if (error) {
+      return (
+        <div>
+          error %(
+        </div>
+      );
+    }
 
-      </Query>
-    );
+    if (!profile || loading) {
+      return (
+        <div>
+          loading
+        </div>
+      );
+    }
+
+    return <PersonProfile person={profile} />;
   }
 }
 
-export { ProfileScreen };
+ProfileScreen.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      slug: PropTypes.string,
+    }),
+  }).isRequired,
+  currentUser: PropTypes.shape({
+    space: PropTypes.shape({
+      uuid: PropTypes.string,
+    }),
+  }).isRequired,
+  fetchProfile: PropTypes.func.isRequired,
+  profiles: PropTypes.shape({
+    byId: PropTypes.object,
+    error: PropTypes.any,
+    loading: PropTypes.bool,
+  }).isRequired,
+};
+
+export default ProfileScreen;
