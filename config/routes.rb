@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resource :current_user, only: [:show]
     resources :spaces, only: [] do
       scope module: :spaces do
-        resources :profiles, only: [:index]
+        resources :profiles, only: [:index, :show]
       end
     end
   end

@@ -1,8 +1,19 @@
 class Api::Spaces::ProfilesController < ApplicationController
-  def index
-    space = Space.find_by!(uuid: params[:space_id])
-    authorize space, :index_profiles?
+  before_action :find_space
 
-    @profiles = space.profiles
+  def index
+    authorize @space, :index_profiles?
+    @profiles = @space.profiles
+  end
+
+  def show
+    @profile = Profile.friendly.find(params[:id])
+    authorize @profile, :show?
+  end
+
+  private
+
+  def find_space
+    @space = Space.find_by!(uuid: params[:space_id])
   end
 end

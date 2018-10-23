@@ -1,5 +1,9 @@
 class SpacePolicy < ApplicationPolicy
-  def index_profiles?
+  def show?
     user.present? && user.space.present? && user.space == record
+  end
+
+  def index_profiles?
+    show?
   end
 end
