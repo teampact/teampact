@@ -14,5 +14,7 @@ module Teampact
     config.generators.view_specs = false
 
     config.lograge.enabled = true
+
+    config.active_storage.variant_processor = :imagemagick
   end
 end
