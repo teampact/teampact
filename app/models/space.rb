@@ -13,6 +13,8 @@
 class Space < ApplicationRecord
   include FriendlyId
 
+  has_many :profiles
+
   friendly_id :name, use: :slugged
 
   before_create :generate_uuid
