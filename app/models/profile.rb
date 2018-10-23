@@ -30,5 +30,11 @@ class Profile < ApplicationRecord
   belongs_to :user
   belongs_to :space
 
+  has_one_attached :photo
+
   friendly_id :name, use: :slugged
+
+  def photo_url
+    photo.variant(resize: '400x400')
+  end
 end

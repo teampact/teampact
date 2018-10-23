@@ -12,7 +12,7 @@ const NameBlock = styled.div`
 const PersonProfile = ({ person }) => {
   return (
     <div className="container">
-      <PersonPhoto photo={ person.photo } />
+      <PersonPhoto photo={ person.photo_url } />
       <NameBlock>
         { person.name }
       </NameBlock>

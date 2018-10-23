@@ -3,5 +3,7 @@ json.(@profile,
   :name,
   :email,
   :phone,
-  :tagline
+  :tagline,
 )
+
+json.photo_url url_for(@profile.photo_url)
