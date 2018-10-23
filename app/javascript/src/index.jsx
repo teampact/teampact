@@ -38,6 +38,10 @@ body {
 body * {
   font-family: ${theme.sansSerifFont};
 }
+
+a {
+  color: ${theme.colors.primary};
+}
 `;
 
 const App = props => (
