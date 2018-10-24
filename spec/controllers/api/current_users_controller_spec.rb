@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'access_examples_spec'
 
 context 'when user is authorized' do
   describe Api::CurrentUsersController do
