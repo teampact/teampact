@@ -7,7 +7,7 @@ require 'rspec/rails'
 
 require 'devise'
 require_relative 'support/controllers_helper'
-require 'access_examples_spec'
+require 'access_examples'
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
