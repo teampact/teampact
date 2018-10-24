@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'access_examples_spec'
 
 context 'when user is authorized' do
   describe Api::CurrentUsersController do
@@ -9,10 +10,7 @@ context 'when user is authorized' do
 
       render_views
 
-      it do
-        subject
-        expect(response).to have_http_status :ok
-      end
+      it_behaves_like 'allows access'
 
       context 'when user is not logged in' do
         before { subject }
