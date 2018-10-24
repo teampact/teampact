@@ -35,6 +35,6 @@ class Profile < ApplicationRecord
   friendly_id :name, use: :slugged
 
   def photo_url
-    photo.variant(resize: '400x400')
+    photo.variant(resize: '400x400') if photo.attached?
   end
 end
