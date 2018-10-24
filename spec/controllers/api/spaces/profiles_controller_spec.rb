@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 describe Api::Spaces::ProfilesController do
   let(:space) { create :space }
   let(:profile) { create :profile, space: space }

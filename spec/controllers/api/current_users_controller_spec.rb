@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 context 'when user is authorized' do
   describe Api::CurrentUsersController do
     let(:user) { create :user }
