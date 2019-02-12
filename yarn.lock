@@ -3146,8 +3146,8 @@ graphql-anywhere@^4.1.19:
     apollo-utilities "^1.0.21"
 
 graphql-tag@^2.4.2, graphql-tag@latest:
-  version "2.9.2"
-  resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.9.2.tgz#2f60a5a981375f430bf1e6e95992427dc18af686"
+  version "2.10.1"
+  resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.10.1.tgz#10aa41f1cd8fae5373eaf11f1f67260a3cad5e02"
 
 graphql@^0.13.2:
   version "0.13.2"
