@@ -14,7 +14,7 @@
     "graphql": "^0.13.2",
     "graphql-tag": "latest",
     "prop-types": "^15.6.2",
-    "react": "^16.5.2",
+    "react": "^16.9.0",
     "react-apollo": "^2.2.3",
     "react-dom": "^16.5.2",
     "react-redux": "^5.0.7",
