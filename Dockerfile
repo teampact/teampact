@@ -1,4 +1,4 @@
-FROM ruby:2.5.3
+FROM ruby:2.6.4
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
