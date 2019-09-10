@@ -117,7 +117,7 @@ GEM
     graphiql-rails (1.4.11)
       railties
       sprockets-rails
-    graphql (1.8.10)
+    graphql (1.9.12)
     guard (2.14.2)
       formatador (>= 0.2.4)
       listen (>= 2.7, < 4.0)
@@ -348,7 +348,7 @@ DEPENDENCIES
   foreman
   friendly_id (~> 5.2.0)
   graphiql-rails
-  graphql (~> 1.8.10)
+  graphql (~> 1.9.12)
   guard
   guard-rspec
   image_processing

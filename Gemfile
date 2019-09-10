@@ -14,7 +14,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 gem 'friendly_id', '~> 5.2.0'
-gem 'graphql', '~> 1.8.10'
+gem 'graphql', '~> 1.9.12'
 gem 'image_processing'
 gem 'jbuilder', '~> 2.5'
 gem 'lograge'
